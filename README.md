@@ -51,3 +51,17 @@ To install dependencies and run your Google Cloud Vertex AI Studio App locally, 
 
 ```bash
 npm install && npm run dev
+```
+
+## Deploying to Google Cloud Run
+
+No frontend code changes are required. For backend deployment, this repo now supports Cloud Run defaults:
+
+* The backend listens on `PORT` (Cloud Run injects this automatically).
+* The backend defaults to host `0.0.0.0` (required by Cloud Run).
+* `npm start` no longer requires `backend/.env.local`; configure env vars in Cloud Run instead.
+
+Set these required environment variables on your Cloud Run service:
+
+* `GOOGLE_CLOUD_PROJECT`
+* `GOOGLE_CLOUD_LOCATION`
